@@ -15,9 +15,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
     get static_pages_home_url
     assert_response :success
-
-    # <title>タグ内に「Home | Ruby on Rails Tutorial Sample App」という文字列があるかどうかをチェック
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "Ruby on Rails Tutorial Sample App"
   end
 
   test "should get help" do
