@@ -9,7 +9,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }	#case_sensitive :trueで大文字小文字を区別する
 
     has_secure_password
-    validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+    # allow_nil: trueはnilの場合バリデーション をスキップする。
+    #新規登録時はhas_secure_passwordのバリデーションがかかる。editではかからない
 
   class << self
     # 渡された文字列のハッシュ値を返す

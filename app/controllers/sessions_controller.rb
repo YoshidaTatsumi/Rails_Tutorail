@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     	log_in user
       remember user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)   #チェックボックスがオンのときに'1'になり、オフのときに'0'になります
-      redirect_to user 		#user_url(user))と同じ
+      redirect_back_or user
     else
     	flash.now[:danger] = 'Invalid email/password combination'
     	render 'new'

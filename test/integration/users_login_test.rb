@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
 	def setup
-    @user = users(:michael)
+    @user = users(:michael)   #usersはfixtureのファイル名users.ymlを表し、:michaelというシンボルはユーザーを参照するためのキーを表します
   end
 
   test "login with invalid information" do
